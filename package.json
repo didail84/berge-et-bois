@@ -1,0 +1,98 @@
+{
+  "name": "berge-et-bois",
+  "productName": "Berge & Bois",
+  "version": "1.0.0",
+  "description": "Calcul de structures bois (terrasse, ponton, passerelle, pergola…), ouvrages de berge, plans, débit, devis et suivi de chantier.",
+  "author": {
+    "name": "Didier Beltran"
+  },
+  "license": "MIT",
+  "main": "main.js",
+  "private": true,
+  "homepage": "https://github.com/didail84/berge-et-bois",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/didail84/berge-et-bois.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --publish never",
+    "dist:win": "electron-builder --win --publish never",
+    "dist:mac": "electron-builder --mac --publish never",
+    "dist:linux": "electron-builder --linux --publish never"
+  },
+  "devDependencies": {
+    "electron": "43.7.11",
+    "electron-builder": "26.17.0"
+  },
+  "desktop": {
+    "host": "berge-et-bois",
+    "repo": "didail84/berge-et-bois",
+    "background": "#EEF1ED"
+  },
+  "build": {
+    "appId": "io.github.didail84.bergeetbois",
+    "productName": "Berge & Bois",
+    "artifactName": "BergeEtBois-${version}-${os}-${arch}.${ext}",
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json",
+      "app/**",
+      "build/icon.png"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "category": "public.app-category.productivity",
+      "identity": "-",
+      "minimumSystemVersion": "12.0",
+      "icon": "build/icon.png"
+    },
+    "dmg": {
+      "title": "Ciné Western ${version}"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Berge & Bois",
+      "installerLanguages": [
+        "fr_FR"
+      ],
+      "language": "1036"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Office",
+      "icon": "build/icon.png"
+    },
+    "publish": null
+  }
+}
