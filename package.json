@@ -1,7 +1,7 @@
 {
   "name": "berge-et-bois",
   "productName": "Berge & Bois",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Calcul de structures bois (terrasse, ponton, passerelle, pergola…), ouvrages de berge, plans, débit, devis et suivi de chantier.",
   "author": {
     "name": "Didier Beltran"
